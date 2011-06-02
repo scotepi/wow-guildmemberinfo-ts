@@ -1,0 +1,9 @@
+## Interface: 40100
+
+## Title: Guild Trade Skills
+## Notes: Adds guild members trade skills to the main guild roster window.
+
+## Author: Scotepi
+## Version: 0.1
+
+GuildTradeSkills.lua
