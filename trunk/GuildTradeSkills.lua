@@ -1,16 +1,18 @@
+local addonName, L = ...;
+
 GTS_ProfessionInfo = {
-	[0] =	{ name = 'None', 			icon = 'Interface\\Icons\\inv_gizmo_rocketlauncher', };
-	[164] = { name = 'Blacksmithing',	icon = 'Interface\\Icons\\trade_blacksmithing', },
-	[165] = { name = 'Leatherworking',	icon = 'Interface\\Icons\\inv_misc_armorkit_17' },
-	[171] = { name = 'Alchemy',			icon = 'Interface\\Icons\\trade_alchemy' },
-	[182] = { name = 'Herbalism',		icon = 'Interface\\Icons\\spell_nature_naturetouchgrow' },
-	[186] = { name = 'Mining',			icon = 'Interface\\Icons\\trade_mining' },
-	[197] = { name = 'Tailoring',		icon = 'Interface\\Icons\\trade_tailoring' },
-	[202] = { name = 'Engineering',		icon = 'Interface\\Icons\\trade_engineering' },
-	[333] = { name = 'Enchanting',		icon = 'Interface\\Icons\\trade_engraving' },
-	[393] = { name = 'Skinning',		icon = 'Interface\\Icons\\inv_misc_pelt_wolf_01' },
-	[755] = { name = 'Jewelcrafting',	icon = 'Interface\\Icons\\inv_misc_gem_01' },
-	[773] = { name = 'Inscription',		icon = 'Interface\\Icons\\inv_inscription_tradeskill01' },
+	[0] =	{ name = L['No Profession'], 	icon = 'Interface\\Icons\\inv_gizmo_rocketlauncher', };
+	[164] = { name = L['Blacksmithing'],	icon = 'Interface\\Icons\\trade_blacksmithing', },
+	[165] = { name = L['Leatherworking'],	icon = 'Interface\\Icons\\inv_misc_armorkit_17' },
+	[171] = { name = L['Alchemy'],			icon = 'Interface\\Icons\\trade_alchemy' },
+	[182] = { name = L['Herbalism'],		icon = 'Interface\\Icons\\spell_nature_naturetouchgrow' },
+	[186] = { name = L['Mining'],			icon = 'Interface\\Icons\\trade_mining' },
+	[197] = { name = L['Tailoring'],		icon = 'Interface\\Icons\\trade_tailoring' },
+	[202] = { name = L['Engineering'],		icon = 'Interface\\Icons\\trade_engineering' },
+	[333] = { name = L['Enchanting'],		icon = 'Interface\\Icons\\trade_engraving' },
+	[393] = { name = L['Skinning'],			icon = 'Interface\\Icons\\inv_misc_pelt_wolf_01' },
+	[755] = { name = L['Jewelcrafting'],	icon = 'Interface\\Icons\\inv_misc_gem_01' },
+	[773] = { name = L['Inscription'],		icon = 'Interface\\Icons\\inv_inscription_tradeskill01' },
 };
 
 GTS_Temp = {
@@ -44,7 +46,7 @@ end
 
 function GTS_CreatIcons()
 	CreateFrame("Button", "GTSButton1", GuildMemberDetailFrame);
-	GTSButton1:SetPoint("TOPRIGHT", "GuildMemberDetailFrame", "TOPRIGHT", -19,-27);
+	GTSButton1:SetPoint("BOTTOMLEFT", "GuildMemberDetailFrame", "TOPLEFT", 10, 5);
 	GTSButton1:SetFrameStrata("MEDIUM");
 	GTSButton1:SetSize(25,25);
 	GTSButton1:SetFrameLevel(5);
@@ -58,7 +60,7 @@ function GTS_CreatIcons()
 	GTSIcon1:SetPoint("TOPLEFT", 7, -5);
 	
 	CreateFrame("Button", "GTSButton2", GuildMemberDetailFrame);
-	GTSButton2:SetPoint("TOPLEFT", "GTSButton1", "BOTTOMLEFT", 0,-5);
+	GTSButton2:SetPoint("LEFT", "GTSButton1", "RIGHT", 5,0);
 	GTSButton2:SetFrameStrata("MEDIUM");
 	GTSButton2:SetSize(25,25);
 	GTSButton2:SetFrameLevel(5);
@@ -185,19 +187,26 @@ function GTS_OnEnter1(self)
 	local skill = GTS_Temp.skill1;
 	local name = GTS_ProfessionInfo[GTS_Temp.skillID1].name;
 	
-	GameTooltip:SetOwner(self, "ANCHOR_NONE");
-	GameTooltip:SetPoint(GTS_GetAnchors(self));
-	GameTooltip:AddLine(skill..' |cFFFFFFFF'..name..'|r');
-	GameTooltip:Show();
+	GTS_ShowTooltip(self, skill, name);
 end
 
 function GTS_OnEnter2(self)
 	local skill = GTS_Temp.skill2;
 	local name = GTS_ProfessionInfo[GTS_Temp.skillID2].name;
 	
+	GTS_ShowTooltip(self, skill, name);
+end
+
+function GTS_ShowTooltip(self, skill, name)
 	GameTooltip:SetOwner(self, "ANCHOR_NONE");
 	GameTooltip:SetPoint(GTS_GetAnchors(self));
-	GameTooltip:AddLine(skill..' |cFFFFFFFF'..name..'|r');
+	
+	if ( type(skill) == 'number' ) and ( skill > 0 ) then
+		GameTooltip:AddLine(skill..' |cFFFFFFFF'..name..'|r');
+	else
+		GameTooltip:AddLine('|cFFFFFFFF'..name..'|r');
+	end
+		
 	GameTooltip:Show();
 end
 
