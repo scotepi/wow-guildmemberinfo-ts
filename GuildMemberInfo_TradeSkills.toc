@@ -1,10 +1,11 @@
 ## Interface: 40100
 
-## Title: Guild Trade Skills
+## Title: <GMI> Trade Skills
 ## Notes: Adds guild members trade skills to the main guild roster window.
+## Dependencies: GuildMemberInfo
 
 ## Author: Scotepi
-## Version: 0.2
+## Version: @project-version@
 
 locals.lua
-GuildTradeSkills.lua
+GuildMemberInfo_TradeSkills.lua
