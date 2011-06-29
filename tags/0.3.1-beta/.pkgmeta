@@ -1,0 +1,4 @@
+package-as: GuildMemberInfo_TradeSkills
+
+required-dependencies:
+	- libgmi
