@@ -1,18 +1,18 @@
 local addonName, L = ...;
 
 local ProfessionInfo = {
-	[0] =	{ name = L['No Profession'], 	icon = 'Interface\\Icons\\inv_gizmo_rocketlauncher', };
-	[164] = { name = L['Blacksmithing'],	icon = 'Interface\\Icons\\trade_blacksmithing', },
-	[165] = { name = L['Leatherworking'],	icon = 'Interface\\Icons\\inv_misc_armorkit_17' },
-	[171] = { name = L['Alchemy'],			icon = 'Interface\\Icons\\trade_alchemy' },
-	[182] = { name = L['Herbalism'],		icon = 'Interface\\Icons\\spell_nature_naturetouchgrow' },
-	[186] = { name = L['Mining'],			icon = 'Interface\\Icons\\trade_mining' },
-	[197] = { name = L['Tailoring'],		icon = 'Interface\\Icons\\trade_tailoring' },
-	[202] = { name = L['Engineering'],		icon = 'Interface\\Icons\\trade_engineering' },
-	[333] = { name = L['Enchanting'],		icon = 'Interface\\Icons\\trade_engraving' },
-	[393] = { name = L['Skinning'],			icon = 'Interface\\Icons\\inv_misc_pelt_wolf_01' },
-	[755] = { name = L['Jewelcrafting'],	icon = 'Interface\\Icons\\inv_misc_gem_01' },
-	[773] = { name = L['Inscription'],		icon = 'Interface\\Icons\\inv_inscription_tradeskill01' },
+	[0] =	{ name = L['No Profession'], 	book = false,	icon = 'Interface\\Icons\\inv_gizmo_rocketlauncher', };
+	[164] = { name = L['Blacksmithing'],	book = true,	icon = 'Interface\\Icons\\trade_blacksmithing', },
+	[165] = { name = L['Leatherworking'],	book = true,	icon = 'Interface\\Icons\\inv_misc_armorkit_17' },
+	[171] = { name = L['Alchemy'],			book = true,	icon = 'Interface\\Icons\\trade_alchemy' },
+	[182] = { name = L['Herbalism'],		book = false,	icon = 'Interface\\Icons\\spell_nature_naturetouchgrow' },
+	[186] = { name = L['Mining'],			book = true,	icon = 'Interface\\Icons\\trade_mining' },
+	[197] = { name = L['Tailoring'],		book = true,	icon = 'Interface\\Icons\\trade_tailoring' },
+	[202] = { name = L['Engineering'],		book = true,	icon = 'Interface\\Icons\\trade_engineering' },
+	[333] = { name = L['Enchanting'],		book = true,	icon = 'Interface\\Icons\\trade_engraving' },
+	[393] = { name = L['Skinning'],			book = false,	icon = 'Interface\\Icons\\inv_misc_pelt_wolf_01' },
+	[755] = { name = L['Jewelcrafting'],	book = true,	icon = 'Interface\\Icons\\inv_misc_gem_01' },
+	[773] = { name = L['Inscription'],		book = true,	icon = 'Interface\\Icons\\inv_inscription_tradeskill01' },
 };
 
 local Temp = {
