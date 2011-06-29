@@ -1,6 +1,6 @@
-## Interface: 40100
+## Interface: 40200
 
-## Title: <GMI> Trade Skills
+## Title: GuildMemberInfo - Trade Skills
 ## Notes: Adds guild members trade skills to the main guild roster window.
 ## Dependencies: GuildMemberInfo
 
