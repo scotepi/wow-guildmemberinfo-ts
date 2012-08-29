@@ -1,0 +1,11 @@
+## Interface: 50001
+
+## Title: GuildMemberInfo - Trade Skills
+## Notes: Adds guild members trade skills to the main guild roster window.
+## Dependencies: GuildMemberInfo
+
+## Author: Scotepi
+## Version: @project-version@
+
+locals.lua
+GuildMemberInfo_TradeSkills.lua
