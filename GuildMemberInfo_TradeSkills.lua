@@ -37,7 +37,7 @@ GMI:Register("GMITradeSkills", {
 
 function GMIts_CreatIcons(label, text)
 	CreateFrame("Button", "GMItsButton1", GMIFrame);
-	GMItsButton1:SetPoint("LEFT", label, "RIGHT", 0, 5);
+	GMItsButton1:SetPoint("LEFT", label, "RIGHT", 5, 5);
 	GMItsButton1:SetFrameStrata("MEDIUM");
 	GMItsButton1:SetSize(25,25);
 	GMItsButton1:SetFrameLevel(5);
@@ -48,10 +48,10 @@ function GMIts_CreatIcons(label, text)
 	GMItsButton1:CreateTexture("GMItsIcon1");
 	GMItsIcon1:SetSize(25,25);
 	GMItsIcon1:SetTexture("Interface\\Icons\\inv_gizmo_rocketlauncher");
-	GMItsIcon1:SetPoint("TOPLEFT", 7, -5);
-	
+	GMItsIcon1:SetPoint("CENTER");
+
 	CreateFrame("Button", "GMItsButton2", GMIFrame);
-	GMItsButton2:SetPoint("LEFT", "GMItsButton1", "RIGHT", 5,0);
+	GMItsButton2:SetPoint("LEFT", "GMItsButton1", "RIGHT", 5, 0);
 	GMItsButton2:SetFrameStrata("MEDIUM");
 	GMItsButton2:SetSize(25,25);
 	GMItsButton2:SetFrameLevel(5);
@@ -62,7 +62,7 @@ function GMIts_CreatIcons(label, text)
 	GMItsButton2:CreateTexture("GMItsIcon2");
 	GMItsIcon2:SetSize(25,25);
 	GMItsIcon2:SetTexture("Interface\\Icons\\inv_gizmo_rocketlauncher");
-	GMItsIcon2:SetPoint("TOPLEFT", 7, -5);
+	GMItsIcon2:SetPoint("CENTER");
 end
 
 function GMIts_UpdateIcons(name)
@@ -142,10 +142,9 @@ function GMIts_SkillsByName(name)
 	GMIts_OpenAll();
 	
 	for i=1,GetNumGuildTradeSkill() do
-		local skillID, isCollapsed, iconTexture, headerName, numOnline, numVisible, numPlayers,
-            playerName, class, online, zone, skill, classFileName, isMobile = GetGuildTradeSkillInfo(i);
+        local skillID, isCollapsed, iconTexture, headerName, numOnline, numVisible, numPlayers, playerName, playerNameWithRealm, class, online, zone, skill, classFileName, isMobile = GetGuildTradeSkillInfo(i);
 			
-		if playerName == name then
+		if playerNameWithRealm == name then
 			table.insert(skills, {
 				['skillID'] = skillID,
 				['skill'] = skill,
