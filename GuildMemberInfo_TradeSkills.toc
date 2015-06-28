@@ -1,4 +1,4 @@
-## Interface: 60100
+## Interface: 60200
 
 ## Title: GuildMemberInfo - Trade Skills
 ## Notes: Adds guild members trade skills to the main guild roster window.
