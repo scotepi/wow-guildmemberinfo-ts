@@ -1,0 +1,12 @@
+package-as: GuildMemberInfo_TradeSkills
+
+externals:
+    GMI:
+		url: https://repos.wowace.com/wow/libgmi
+		tag: latest
+
+move-folders:
+	GuildMemberInfo_TradeSkills/GMI: GuildMemberInfo
+	
+required-dependencies:
+	- libgmi
