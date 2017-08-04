@@ -2,7 +2,7 @@ package-as: GuildMemberInfo_TradeSkills
 
 externals:
     GMI:
-		url: svn://svn.wowace.com/wow/libgmi/mainline/trunk
+		url: https://repos.wowace.com/wow/libgmi
 		tag: latest
 
 move-folders:
