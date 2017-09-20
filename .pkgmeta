@@ -1,7 +1,7 @@
 package-as: GuildMemberInfo_TradeSkills
 
 externals:
-    GMI: https://repos.wowace.com/wow/libgmi/trunk
+    GMI: https://github.com/scotepi/wow-guildmemberinfo
 
 move-folders:
 	GuildMemberInfo_TradeSkills/GMI: GuildMemberInfo
